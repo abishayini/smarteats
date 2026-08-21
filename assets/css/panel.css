@@ -1,0 +1,296 @@
+/* =====================================================================
+   Smart Eats - staff and admin panel
+   Loaded after style.css by includes/panel_header.php.
+   ===================================================================== */
+
+.panel-body { background: #f1efe9; }
+
+.panel {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  min-height: 100vh;
+}
+
+/* Sidebar ---------------------------------------------------------- */
+.panel__side {
+  background: var(--brand-dark);
+  color: #cfe0d9;
+  padding: 1.25rem 1rem 2rem;
+  position: sticky; top: 0;
+  height: 100vh; overflow-y: auto;
+}
+
+.panel__brand {
+  display: flex; align-items: center; gap: .6rem;
+  color: #fff; font-family: var(--font-display);
+  font-size: 1.1rem; font-weight: 600;
+  padding-bottom: 1.25rem; margin-bottom: .5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, .12);
+}
+.panel__brand:hover { text-decoration: none; }
+.panel__brand .brand__mark { width: 34px; height: 34px; border-radius: 9px; font-size: .9rem; background: var(--accent); }
+
+.panel__navlabel {
+  margin: 1.35rem 0 .4rem;
+  font-size: .7rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: .09em;
+  color: #7fa494;
+}
+
+.panel__nav { list-style: none; margin: 0; padding: 0; }
+.panel__nav a {
+  display: block;
+  padding: .55rem .75rem;
+  border-radius: 8px;
+  color: #cfe0d9; font-size: .92rem; font-weight: 500;
+}
+.panel__nav a:hover { background: rgba(255, 255, 255, .09); color: #fff; text-decoration: none; }
+.panel__nav a.is-active { background: var(--accent); color: #fff; }
+
+/* Main column ------------------------------------------------------ */
+.panel__main { display: flex; flex-direction: column; min-width: 0; }
+
+.panel__top {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem; flex-wrap: wrap;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+  padding: 1.1rem 1.75rem;
+}
+.panel__title { margin: 0; font-size: 1.45rem; }
+.panel__account {
+  display: flex; align-items: center; gap: .85rem;
+  font-size: .87rem; color: var(--muted);
+}
+
+.panel__content { padding: 1.75rem; flex: 1; }
+.panel__content > .alert:first-child { margin-top: 0; }
+
+/* Metric tiles ----------------------------------------------------- */
+.stats {
+  display: grid; gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  margin-bottom: 1.75rem;
+}
+.stat {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--brand);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.25rem;
+}
+.stat--accent  { border-left-color: var(--accent); }
+.stat--warn    { border-left-color: var(--warn); }
+.stat--ok      { border-left-color: var(--ok); }
+.stat__label {
+  margin: 0 0 .25rem;
+  font-size: .74rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: .06em; color: var(--muted);
+}
+.stat__value {
+  margin: 0;
+  font-family: var(--font-display); font-size: 1.85rem; font-weight: 600;
+  line-height: 1;
+}
+
+/* Order board ------------------------------------------------------ */
+.board { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+.order-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem 1.15rem;
+}
+.order-card.is-new { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-light); }
+.order-card__head {
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: .5rem; margin-bottom: .5rem;
+}
+.order-card__ref { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; }
+.order-card__meta { font-size: .82rem; color: var(--muted); }
+.order-card__items { list-style: none; margin: .6rem 0; padding: 0; font-size: .9rem; }
+.order-card__items li { display: flex; justify-content: space-between; gap: .5rem; padding: .15rem 0; }
+
+/* Order board ------------------------------------------------------ */
+.board-columns {
+  display: grid; gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  align-items: start;
+}
+
+.board-column {
+  background: #eae7e0;
+  border-radius: var(--radius-lg);
+  padding: .85rem;
+  min-height: 120px;
+}
+.board-column__title {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: .5rem; margin: 0 .25rem .75rem;
+  font-family: var(--font-body);
+  font-size: .78rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: .07em; color: var(--ink-soft);
+}
+.board-column__count {
+  display: grid; place-items: center;
+  min-width: 22px; height: 22px; padding: 0 .35rem;
+  background: var(--ink-soft); color: #fff;
+  border-radius: 999px; font-size: .74rem;
+}
+.board-column__empty {
+  margin: 0; padding: 1.25rem .5rem;
+  text-align: center; font-size: .86rem; color: var(--muted);
+}
+
+.order-card { margin-bottom: .85rem; }
+.order-card:last-child { margin-bottom: 0; }
+.order-card.is-late { border-color: var(--err); box-shadow: 0 0 0 2px var(--err-bg); }
+
+.order-card__age { font-size: .8rem; color: var(--muted); white-space: nowrap; }
+.order-card__age.is-late { color: var(--err); font-weight: 600; }
+
+.order-card__flag {
+  margin: .4rem 0 0; padding: .3rem .55rem;
+  background: var(--err-bg); color: var(--err);
+  border-radius: 6px; font-size: .8rem; font-weight: 500;
+}
+.order-card__cash {
+  margin: .4rem 0 0; padding: .3rem .55rem;
+  background: var(--warn-bg); color: var(--warn);
+  border-radius: 6px; font-size: .8rem; font-weight: 500;
+}
+.order-card__note {
+  margin: .5rem 0 0; padding: .4rem .55rem;
+  background: var(--info-bg); color: var(--info);
+  border-radius: 6px; font-size: .82rem;
+}
+
+.order-card__items { border-top: 1px solid var(--line); padding-top: .6rem; margin-top: .6rem; }
+.order-card__items li { color: var(--ink-soft); }
+
+.order-card__actions {
+  display: flex; flex-wrap: wrap; align-items: center; gap: .45rem;
+  margin-top: .85rem; padding-top: .75rem;
+  border-top: 1px solid var(--line);
+}
+.order-card__actions form { margin: 0; }
+.order-card__link { margin-left: auto; font-size: .84rem; color: var(--muted); }
+
+#new-order-alert { display: flex; align-items: center; flex-wrap: wrap; gap: .4rem; }
+
+/* Kitchen ticket ---------------------------------------------------- */
+/* Hidden on screen; the only thing that appears on paper. Sized for a
+   receipt printer but prints correctly on A4 as well. */
+.print-only { display: none; }
+
+.ticket__ref {
+  font-family: var(--font-display);
+  font-size: 1.6rem; margin: 0 0 .25rem;
+}
+.ticket__meta { margin: 0 0 .2rem; font-size: .9rem; }
+.ticket__items {
+  list-style: none; margin: .85rem 0; padding: .85rem 0;
+  border-top: 2px solid #000; border-bottom: 2px solid #000;
+}
+.ticket__items li { padding: .3rem 0; font-size: 1.05rem; }
+.ticket__note {
+  margin: .5rem 0; padding: .4rem;
+  border: 2px solid #000; font-weight: 700; font-size: .95rem;
+}
+.ticket__total { margin: .75rem 0 0; font-weight: 700; }
+
+@media print {
+  .panel__side,
+  .panel__top,
+  .no-print,
+  .alert { display: none !important; }
+
+  .panel { display: block; }
+  .panel__content { padding: 0; }
+  .panel-body { background: #fff; }
+
+  .print-only { display: block; }
+  .card, .grid, .table-scroll, .stats { display: none !important; }
+
+  .ticket {
+    display: block;
+    font-family: system-ui, sans-serif;
+    color: #000;
+    max-width: 72mm;
+  }
+
+  @page { margin: 8mm; }
+}
+
+/* Responsive ------------------------------------------------------- */
+@media (max-width: 900px) {
+  .panel { grid-template-columns: 1fr; }
+  .panel__side { position: static; height: auto; }
+  .panel__content { padding: 1.25rem; }
+  .panel__top { padding: 1rem 1.25rem; }
+}
+
+/* =====================================================================
+   PHASE 11 - panel scope indicator and restaurant switcher
+   ===================================================================== */
+
+/* Which restaurant the panel is currently acting on. Kept visible at
+   all times, because on a platform the same screen means different
+   things depending on the answer. */
+.panel__scope {
+  margin: 0 0 1rem;
+  padding: .7rem .85rem;
+  background: rgba(255, 255, 255, .06);
+  border-radius: 8px;
+  font-size: .9rem;
+  line-height: 1.35;
+}
+
+.panel__scope strong { display: block; }
+
+.panel__scope-label {
+  display: block;
+  font-size: .68rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-weight: 600;
+  opacity: .65;
+  margin-bottom: .15rem;
+}
+
+.panel__switch { margin: 0 0 1.25rem; }
+
+.panel__switch select {
+  width: 100%;
+  padding: .45rem .6rem;
+  font-size: .88rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, .18);
+  background: rgba(255, 255, 255, .08);
+  color: inherit;
+}
+
+.panel__switch select option { color: #1b211e; }
+
+/* Count of restaurants waiting for approval, on the sidebar link. */
+.panel__badge {
+  display: inline-block;
+  margin-left: .35rem;
+  padding: .05rem .4rem;
+  font-size: .7rem;
+  font-weight: 600;
+  border-radius: 999px;
+  background: var(--accent, #245c4a);
+  color: #fff;
+}
+
+/* Restaurant name on a board card, shown only when an administrator is
+   watching every restaurant at once. */
+.ticket-card__vendor {
+  margin: 0 0 .35rem;
+  font-size: .74rem;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  font-weight: 600;
+  color: var(--accent, #245c4a);
+}
