@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="No photo yet">
+  <rect width="800" height="600" fill="#eef1ee"/>
+  <g fill="none" stroke="#b9c4bd" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="400" cy="292" r="118"/>
+    <circle cx="400" cy="292" r="66"/>
+    <path d="M188 214v156M188 214c-22 0-36 18-36 44s14 44 36 44"/>
+    <path d="M612 214v156M588 214v58M636 214v58M588 272h48"/>
+  </g>
+  <text x="400" y="486" text-anchor="middle"
+        font-family="Inter, system-ui, sans-serif" font-size="30" fill="#8d9a92">
+    No photo yet
+  </text>
+</svg>
